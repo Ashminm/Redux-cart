@@ -8,7 +8,7 @@ const Footer = () => {
     <div style={{ width: '100%', height: '100%', backgroundColor: 'rgb(55, 58, 60)',color:'#FFF' }}>
       <Row className='p-5'>
         <Col md='4'>
-          <h4><i class="fa-brands fa-react me-3"></i>Redux-Cart</h4><hr />
+          <h4><i class="fa-brands fa-vine pe-2"></i>Shop-Cart</h4><hr />
           <p style={{ textAlign: 'justify' }} >
             Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eum recusandae exercitationem hic voluptas debitis repudiandae quisquam laboriosam ullam possimus non ab, animi, voluptates nam accusantium, provident id? Temporibus saepe laboriosam quae ipsum, repudiandae velit animi quasi veniam ipsa cumque? Nemo.</p>
         </Col>

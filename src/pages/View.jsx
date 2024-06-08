@@ -1,9 +1,13 @@
 import React,{useEffect} from "react";
 import { Container, Row, Col, Image, Button, InputGroup, FormControl } from 'react-bootstrap';
-// import { useSelector } from "react-redux";
+import { useDispatch} from 'react-redux'
 import { useParams } from "react-router-dom";
+import { addToCart } from '../redux/slice/cartSlice'
+import { addToWish } from '../redux/slice/wishlistSlice'
+import { decQuantity,incQuantity } from '../redux/slice/cartSlice';
 
 function View() {
+    const dispatch = useDispatch()
     const {id}=useParams()
     const product=JSON.parse(localStorage.getItem("products"))
     const data=product.find(item=>item.id==id)
@@ -40,12 +44,14 @@ function View() {
                         <p className="lead m-0">Returen: {data?.returnPolicy}</p>
                         <p className="lead">Shipping: {data?.shippingInformation}</p>
                         <div className="d-flex">
-                            <InputGroup className="me-3" style={{ maxWidth: '3rem' }}>
-                                <FormControl type="num" defaultValue="1" />
-                            </InputGroup>
-                            <Button variant="outline-dark">
+
+                            <Button variant="outline-dark" onClick={()=>dispatch(addToWish(data))}>
                                 <i className="bi-cart-fill me-1"></i>
-                                Add to cart
+                                Add To Wishlist 
+                            </Button>
+                            <Button variant="outline-dark ms-3" onClick={()=>dispatch(addToCart(data))}>
+                                <i className="bi-cart-fill me-1"></i>
+                                Add To Cart
                             </Button>
                         </div>
                     </Col>

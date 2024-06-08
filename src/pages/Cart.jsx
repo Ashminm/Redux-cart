@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Row, Col, Image, Button } from 'react-bootstrap';
+import { Container, Row, Col, Button } from 'react-bootstrap';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { decQuantity, emptyCart, incQuantity, removeFromCart } from '../redux/slice/cartSlice';
@@ -81,8 +81,9 @@ const Cart = () => {
             </Col>
           </Row>
           <Row className="mt-4 d-flex align-items-center">
-            <Col sm={6} className="order-md-2 text-right">
+            <Col sm={6} className="order-md-2 text-right d-flex justify-content-between">
               <Link className='btn btn-primary' to={'/'}>CheckOut</Link>
+              <Link className='btn btn-warning' onClick={()=>dispatch(emptyCart())} >EmptyCart</Link>
             </Col>
             <Col sm={6} className="mb-3 mb-m-1 order-md-1 text-md-left">
               <Link to={'/'}>

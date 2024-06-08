@@ -14,12 +14,12 @@ function Header() {
     <>
     <Navbar className="bg-body-tertiary d-flex justify-content-between py-3">
         <Container>
-          <Navbar.Brand href="#home" >
-          <i class="fa-brands fa-vine d-md-none"></i>{' '}
+          <Navbar.Brand >
+          <Link to={'/'}><i class="fa-brands fa-vine d-md-none text-dark"></i>{' '}</Link>
           <Link to={'/'} className='text-decoration-none text-dark fw-bolder d-none d-md-block'>
           <i class="fa-brands fa-vine"></i>{' '}
             Shop-Cart
-           
+          
           </Link>
           </Navbar.Brand>
         <div className="d-flex align-items-center">
