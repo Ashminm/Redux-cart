@@ -11,7 +11,7 @@ const wishSlice=createSlice({
             }
             else{
                 state.push(action.payload)
-                alert("Added")
+                alert("Successfully Added!!")
             }
         },
         removeFromWishlist:(state,action)=>{

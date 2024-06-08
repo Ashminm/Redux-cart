@@ -1,6 +1,6 @@
 import React,{useEffect} from "react";
 import { Container, Row, Col, Image, Button, InputGroup, FormControl } from 'react-bootstrap';
-import { useSelector } from "react-redux";
+// import { useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 
 function View() {
@@ -32,9 +32,13 @@ function View() {
                         <p >{data.brand}</p>
                         <h1 className="display-5 fw-bolder">{data?.title}</h1>
                         <div className="fs-5 mb-3">
-                            <span>₹{data?.price}</span>
+                            <span>₹{data?.price} ¦ <span>{data?.discountPercentage}% off</span> </span>
                         </div>
+                        <p className="lead m-0">Caregory: {data?.category}</p>
+                        <p className="lead">Rating: {data?.rating}</p>
                         <p className="lead">{data?.description}</p>
+                        <p className="lead m-0">Returen: {data?.returnPolicy}</p>
+                        <p className="lead">Shipping: {data?.shippingInformation}</p>
                         <div className="d-flex">
                             <InputGroup className="me-3" style={{ maxWidth: '3rem' }}>
                                 <FormControl type="num" defaultValue="1" />
@@ -47,9 +51,7 @@ function View() {
                     </Col>
                 </Row>
             </Container>
-        </section>
-      
-        
+        </section>    
         </>
     );
 }

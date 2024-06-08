@@ -15,7 +15,7 @@ const Cart = () => {
         <Container>
           <Row className="w-100">
             <Col lg={12} md={12} xs={12}>
-              <h3 className="display-5 mb-2 text-center">Shopping Cart</h3>
+              <h3 className="display-5 mb-2 text-center fw-bolder">Shopping Cart</h3>
               <p className="mb-5 text-center"><i className="text-info font-weight-bold">{cart?.length}</i> items in your cart</p>
               {
                 cart?.length > 0 ?
@@ -60,7 +60,7 @@ const Cart = () => {
                     </tbody>
                   </table>
                   :
-                  <p className='text-center'>No items</p>
+                  <p className='text-center'>No items in your cart</p>
               }
               <div className="float-right text-right">
                 <p>Total Products: <span>{cart?.length}</span></p>

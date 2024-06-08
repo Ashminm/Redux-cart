@@ -19,7 +19,8 @@ function Wishlist() {
   return (
     <>
     <section class="py-5">
-    <h3 className="display-5 mb-2 text-center">Wishlist</h3>
+    <h3 className="display-5 mb-2 text-center fw-bolder">Wishlist</h3>
+    <p className="mb-5 text-center"><i className="text-info font-weight-bold">{wishlist?.length}</i> items in your wishlist</p>
             <div class="container px-4 px-lg-5 mt-5">
                 <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
                     {

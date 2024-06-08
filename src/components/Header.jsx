@@ -15,10 +15,10 @@ function Header() {
     <Navbar className="bg-body-tertiary d-flex justify-content-between py-3">
         <Container>
           <Navbar.Brand href="#home" >
-          <i class="fa-brands fa-react d-md-none"></i>{' '}
-          <Link to={'/'} className='text-decoration-none text-dark d-none d-md-block'>
-          <i class="fa-brands fa-react"></i>{' '}
-            Redux-Cart
+          <i class="fa-brands fa-vine d-md-none"></i>{' '}
+          <Link to={'/'} className='text-decoration-none text-dark fw-bolder d-none d-md-block'>
+          <i class="fa-brands fa-vine"></i>{' '}
+            Shop-Cart
            
           </Link>
           </Navbar.Brand>
