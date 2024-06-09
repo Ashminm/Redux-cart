@@ -4,7 +4,6 @@ import { useDispatch} from 'react-redux'
 import { useParams } from "react-router-dom";
 import { addToCart } from '../redux/slice/cartSlice'
 import { addToWish } from '../redux/slice/wishlistSlice'
-import { decQuantity,incQuantity } from '../redux/slice/cartSlice';
 
 function View() {
     const dispatch = useDispatch()

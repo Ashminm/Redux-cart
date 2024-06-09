@@ -18,43 +18,47 @@ function Wishlist() {
 
   return (
     <>
-    <section class="py-5">
+    <section className="py-5">
     <h3 className="display-5 mb-2 text-center fw-bolder">Wishlist</h3>
-    <p className="mb-5 text-center"><i className="text-info font-weight-bold">{wishlist?.length}</i> items in your wishlist</p>
-            <div class="container px-4 px-lg-5 mt-5">
-                <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
-                    {
-                        wishlist.length>0 ?
-                        wishlist?.map(item=>(
-                            <div class="col mb-5">
-                        <div class="card h-100">
-                            
-                        <img class="card-img-top" src={item.thumbnail} height={'200px'} width={'180px'} alt="..." />
-                          
-                            <div class="card-body p-4">
-                                <div class="text-center">
-                                    
-                                    <h5 class="fw-bolder">{item.title}</h5>
-                                  
-                                   ₹{item.price}
-                                </div>
+    <p className="mb-5 text-center">
+        <i className="text-info font-weight-bold">{wishlist?.length}</i> items in your wishlist
+    </p>
+    <div className="container">
+        <div className="row">
+            {wishlist.length > 0 ? (
+                wishlist.map((item) => (
+                    <div className="col-12 col-sm-6 col-md-4 col-lg-3 mb-4" key={item.id}>
+                        <div className="card h-100">
+                            <img
+                                className="card-img-top"
+                                src={item.thumbnail}
+                                height={'200px'}
+                                width={'180px'}
+                                alt={item.title}
+                            />
+                            <div className="card-body p-4 text-center">
+                                <h5 className="fw-bolder">{item.title}</h5>
+                                <p>₹{item.price}</p>
                             </div>
-                          
-                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent d-flex justify-content-between" style={{flexWrap:'wrap'}}>
-                                <div class="text-center mt-2" onClick={()=>dispatch(removeFromWishlist(item.id))}><Link className='btn btn-outline-dark mt-auto'>Remove</Link></div>
-                                <div class="text-center mt-2" onClick={()=>addCart(item)} ><Link className='btn btn-outline-dark mt-auto'>Add to cart</Link></div>
+                            <div className="card-footer p-4 pt-0 border-top-0 bg-transparent d-flex justify-content-between" style={{ flexWrap: 'wrap' }}>
+                                <div className="text-center mt-2" onClick={() => dispatch(removeFromWishlist(item.id))}>
+                                    <button className='btn btn-outline-dark mt-auto'>Remove</button>
+                                </div>
+                                <div className="text-center mt-2" onClick={() => addCart(item)}>
+                                    <button className='btn btn-outline-dark mt-auto'>Add to cart</button>
+                                </div>
                             </div>
                         </div>
                     </div>
-                        )):(
-                            <p className='text-center'>No item in yor wishlist</p>
-                        )
-                    }
-                    
-                    
-                </div>
-            </div>
-        </section>
+                ))
+            ) : (
+                <p className='text-center'>No item in your wishlist</p>
+            )}
+        </div>
+    </div>
+</section>
+
+
         </>
   )
 }
